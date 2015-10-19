@@ -17,9 +17,11 @@ Route::get('/home', 'IndexController@index');
 Route::any('/reset', 'IndexController@reset');
 
 Route::get('/excel', 'IndexController@excel');
+Route::get('/data/collect', 'DataController@collect');
 
 Route::model('data', 'App\Data');
 Route::resource('data', 'DataController');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

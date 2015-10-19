@@ -25,13 +25,13 @@ class DataController extends Controller
     {
     	$datas = Data::paginate(5);
         $today_add = Data::today_add();
-    	$User = Auth::user();//登陆的用户的信息
-    	$isAdmin = $User->isAdmin;
+    	$user = Auth::user();//登陆的用户的信息
+    	$isAdmin = $user->isAdmin;
     	return view('data.index',[
     			'datas'		=>	$datas,
     			'isAdmin'	=>	$isAdmin,
                 'today_add' =>  $today_add,
-                'user' 		=>  $User,
+                'user' 		=>  $user,
     	]);
     }
 
@@ -129,5 +129,20 @@ class DataController extends Controller
     {
 		$data->delete();
 		return Redirect::to('data');
+    }
+    
+    /**
+     * 统计
+     */
+    public function collect(){
+    	$user = Auth::user();//登陆的用户的信息
+    	$isAdmin = $user->isAdmin;
+    	//日新增
+    	$day = Data::day_add();
+    	//当月新增
+    	$madd = Data::m_add();
+    	//总数
+    	$all = Data::unique_user();
+    	return view('data.collect',compact('day', 'madd', 'all', 'user', 'isAdmin'));
     }
 }

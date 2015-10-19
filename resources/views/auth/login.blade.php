@@ -7,6 +7,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">登录</div>
 				<div class="panel-body">
+
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
 							<strong>验证错误!</strong> <br><br>
@@ -18,6 +19,7 @@
 						</div>
 					@endif
 
+					<!-- 表单开始 -->
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -53,6 +55,7 @@
 							</div>
 						</div>
 					</form>
+					<!-- 表单结束 -->
 				</div>
 			</div>
 		</div>

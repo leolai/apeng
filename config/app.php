@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://localhost:999',
 
     /*
     |--------------------------------------------------------------------------
@@ -145,6 +145,7 @@ return [
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+    	'Barryvdh\Debugbar\ServiceProvider',
 
     ],
 
@@ -196,6 +197,7 @@ return [
     	'Html'      => 'Illuminate\Html\HtmlFacade',
   		'Form'      => 'Illuminate\Html\FormFacade',
     	'Excel' 	=> 'Maatwebsite\Excel\Facades\Excel',
+    	'Debugbar' => 'Barryvdh\Debugbar\Facade',
     ],
 
 ];

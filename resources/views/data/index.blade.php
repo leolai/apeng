@@ -5,9 +5,10 @@
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 	
-<button class="btn btn-primary" type="button">
-  今日新增 <span class="badge">{{$today_add}}</span>
-</button>
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">详情</a></li>
+  <li role="presentation"><a href="{{ URL('data/collect') }}">汇总</a></li>
+</ul>
 
 		<table class="table-bordered table table-striped table-responsive table-condensed text-center">
 			<thead>
